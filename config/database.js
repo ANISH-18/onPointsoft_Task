@@ -1,9 +1,13 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
+
 connectDb = () => {
-  mongoose.connect("mongodb://127.0.0.1:27017/onPointsoft");
+  const databaseUrl = process.env.DATABASE_URL;
+  mongoose.connect(databaseUrl);
   let db = mongoose.connection;
+
   db.on("error", (error) => {
-    console.log("Error Connecting Database");
+    console.log("Error Connecting Database", error.message);
   });
 
   db.on("open", () => {
