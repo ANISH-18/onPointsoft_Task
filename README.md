@@ -8,9 +8,10 @@ Database created to store the data is MongoDb: onPointSoft  and collection: user
 
 Register Route
 http://localhost:8081/register
-name, email, password.
+
 
 Created /register endpoint to create new user. The API accept user details such as (name, email, password) and validate them, store them in database.
+name, email, password.
 The validation added is for the registration user details.
 name: should contain atleast 4 letters or it will give a response back "failed" and "name must be greater than 4"
 email: should contain @ and .com , no normal text without that will not allowed. response "failed" and message: "email` is invalid " 
@@ -21,10 +22,11 @@ If response is "success" message"User registered"
 
 Login Route
 http://localhost:8081/login
-email, password.
+
 
 
 Created /login endpoint to login the user. The api accepts user details such as email, password and validate them.
+email, password.
 The validation added is for the login user details.
 email: should contain @ and .com , no normal text without that will not allowed. response "failed" and message: "email` is invalid " 
 checks if email address is existing or not. respone if email not exists "failed". message: "Invalid EMail"
